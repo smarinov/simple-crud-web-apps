@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <title>Expenses Tracker</title>
+</head>
+
+<body>
+
+<nav>
+    <ul>
+        <li class="img"><img src="/static/images/dollar.png"></li>
+        <li><a href="/">Expenses Tracker</a></li>
+
+        <li class="right"><a href="{% url 'profile' %}">Profile</a></li>
+
+    </ul>
+</nav>
+<div class="body">
+
+    <h1>Delete Expense</h1>
+    <div class="form">
+        <form method="POST">
+            <input type="hidden" name="csrfmiddlewaretoken"
+                   value="hwapnt8nZjnQuJ2M6SZBuXGgOwc3fZlrekSnnyS6N1CJtVSbSytIlPT26Nac1auc">
+            {% csrf_token %}
+            <label for="name">Title</label>
+            {{ form.title }}
+            <label for="description">Description</label>
+            {{ form.description }}
+            <label for="image_url">Link to Image</label>
+            {{ form.image_url }}
+            <label for="price">Price</label>
+            {{ form.price }}
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+
+</div>
+<footer>
+    <div>Python Web Basics Exam Preparation @SoftUni</div>
+</footer>
+
+
+</body>
+</html>
