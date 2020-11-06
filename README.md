@@ -1,4 +1,4 @@
-# 1. MyExpenses application
+# 1. MyExpenses
 
 CRUD web application where you can add, edit, delete and track your expenses.
 
