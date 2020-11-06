@@ -1,0 +1,42 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Recipes</title>
+</head>
+
+<body>
+     
+ <nav>
+    <ul>
+        <img src="/static/images/chef.png" alt="chef">
+        <li class="title"><a href="/">Recipes</a></li>
+        <li><a href="{% url 'create recipe' %}">Add Recipe</a></li>
+    </ul>
+</nav>
+    <div class="container">
+        
+<h1>Delete Recipe</h1>
+<div class="items-container">
+    <div class="item">
+        <form method="POST" action="{% url 'delete recipe' recipe.id %}">
+            {% csrf_token %}
+                <label for="{{ form.time.id_for_label }}">Title</label>
+                {{ form.title }}
+                <label for="{{ form.image_url.id_for_label }}">Image URL</label>
+                {{ form.image_url }}
+                <label for="{{ form.image_url.id_for_label }}">Description</label>
+                {{ form.description }}
+                <label for="{{ form.ingredients.id_for_label }}">Ingredients</label>
+                {{ form.ingredients }}
+                <label for="{{ form.time.id_for_label }}">Time (Minutes)</label>
+                {{ form.time }}
+                <input type="submit" class="button edit" value="Delete">
+        </form>
+    </div>
+</div>
+
+    </div>
+
+
+</body></html>
